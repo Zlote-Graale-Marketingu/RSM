@@ -92,8 +92,8 @@ h1 em { font-style: normal; color: var(--orange); }
 
 .section-label { font-family: var(--fh); font-weight: 800; font-size: 20px; color: var(--black); letter-spacing: 0.03em; text-transform: uppercase; }
 
-.section-price-preview { font-size: 12px; color: var(--muted); font-weight: 500; font-family: var(--fb); }
-.section-price-preview.has-value { color: var(--orange); font-weight: 600; }
+.section-price-preview { font-size: 12px; color: var(--white); font-weight: 500; font-family: var(--fb); }
+.section-price-preview.has-value { color: var(--white); font-weight: 600; }
 
 .chevron { width: 16px; height: 16px; color: var(--muted); transition: transform 0.25s; flex-shrink: 0; }
 .section-header.open .chevron { transform: rotate(180deg); }
@@ -138,29 +138,29 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
 .summary-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
 .summary-header svg { width: 20px; height: 20px; color: var(--orange); flex-shrink: 0; }
 
-.summary-title { font-family: var(--fh); font-size: 13px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+.summary-title { font-family: var(--fh); font-size: 13px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white); }
 
-.price-label { font-size: 11px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 6px; font-family: var(--fb); font-weight: 600; }
+.price-label { font-size: 11px; color: var(--white); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 6px; font-family: var(--fb); font-weight: 600; }
 
 .price-amount { font-family: var(--fh); font-size: 54px; font-weight: 900; color: var(--white); letter-spacing: 0em; line-height: 1; transition: all 0.3s ease; }
-.price-amount span { font-size: 28px; font-weight: 700; color: rgba(255,255,255,0.38); }
+.price-amount span { font-size: 28px; font-weight: 700; color: var(--white); }
 
 .tbd-badge { display: inline-flex; align-items: center; gap: 5px; background: rgba(233,103,48,0.2); color: var(--orange); font-size: 11px; font-weight: 600; padding: 5px 10px; border-radius: 100px; margin-bottom: 12px; font-family: var(--fb); letter-spacing: 0.04em; }
 
-.divider { height: 1px; background: rgba(255,255,255,0.08); margin: 18px 0; }
+.divider { height: 1px; background: rgba(255,255,255,0.15); margin: 18px 0; }
 
 .breakdown-list { display: flex; flex-direction: column; gap: 7px; }
 .breakdown-item { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
-.bi-name { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.3; flex: 1; font-family: var(--fb); }
-.bi-val { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.82); white-space: nowrap; flex-shrink: 0; font-family: var(--fb); }
+.bi-name { font-size: 12px; color: var(--white); line-height: 1.3; flex: 1; font-family: var(--fb); }
+.bi-val { font-size: 12px; font-weight: 600; color: var(--white); white-space: nowrap; flex-shrink: 0; font-family: var(--fb); }
 .bi-val.tbd { color: var(--orange); font-size: 11px; }
 
 .cta-btn { display: block; width: 100%; padding: 16px; background: var(--orange); color: var(--white); border: none; border-radius: var(--radius); font-family: var(--fh); font-size: 17px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; text-align: center; transition: background 0.2s, transform 0.15s; margin-top: 20px; text-decoration: none; }
 .cta-btn:hover { background: #c9551f; transform: translateY(-1px); }
 .cta-btn:active { transform: translateY(0); }
 
-.reset-btn { display: block; width: 100%; padding: 10px; background: transparent; color: rgba(255,255,255,0.25); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); font-family: var(--fb); font-size: 12px; cursor: pointer; text-align: center; transition: all 0.2s; margin-top: 8px; }
-.reset-btn:hover { color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.22); }
+.reset-btn { display: block; width: 100%; padding: 10px; background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.3); border-radius: var(--radius); font-family: var(--fb); font-size: 12px; cursor: pointer; text-align: center; transition: all 0.2s; margin-top: 8px; }
+.reset-btn:hover { color: var(--white); border-color: rgba(255,255,255,0.6); }
 
 .info-card { background: var(--card); border-radius: var(--radius-lg); border: 1.5px solid var(--border); padding: 18px 20px; }
 .info-card p { font-size: 12px; color: var(--muted); line-height: 1.65; margin-bottom: 6px; font-family: var(--fb); }
@@ -452,7 +452,7 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
       <div class="divider"></div>
 
       <div class="breakdown-list" id="breakdown">
-        <div style="font-size:12px;color:rgba(255,255,255,0.28);padding:8px 0">Wybierz opcje, aby zobaczyć zestawienie</div>
+        <div style="font-size:12px;color:var(--white);padding:8px 0">Wybierz opcje, aby zobaczyć zestawienie</div>
       </div>
 
       <div class="divider"></div>
@@ -463,9 +463,9 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
       </div>
 
       <div style="margin-top:4px;margin-bottom:4px">
-        <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.32);font-family:'ObviouslyNarrow','Barlow Condensed',sans-serif;margin-bottom:6px">miesięcznie od</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--white);font-family:'ObviouslyNarrow','Barlow Condensed',sans-serif;margin-bottom:6px">miesięcznie od</div>
         <div class="price-amount" id="total-display">0 <span>zł</span></div>
-        <div style="font-size:11px;color:rgba(255,255,255,0.26);margin-top:10px;line-height:1.6;font-style:italic;font-family:'Inter Tight',sans-serif">Kwota orientacyjna. Może ulec zmianie po zapoznaniu się z projektem.</div>
+        <div style="font-size:11px;color:var(--white);margin-top:10px;line-height:1.6;font-style:italic;font-family:'Inter Tight',sans-serif">Kwota orientacyjna. Może ulec zmianie po zapoznaniu się z projektem.</div>
       </div>
 
       <a href="#" class="cta-btn" onclick="return false;">Zapytaj o ofertę →</a>
@@ -637,7 +637,7 @@ function recalc() {
 
   const bdiv = document.getElementById('breakdown');
   if (items.length === 0) {
-    bdiv.innerHTML = '<div style="font-size:12px;color:rgba(255,255,255,0.28);padding:8px 0">Wybierz opcje, aby zobaczyć zestawienie</div>';
+    bdiv.innerHTML = '<div style="font-size:12px;color:var(--white);padding:8px 0">Wybierz opcje, aby zobaczyć zestawienie</div>';
   } else {
     bdiv.innerHTML = '';
     items.filter(i => i.val !== 0).forEach(i => {
