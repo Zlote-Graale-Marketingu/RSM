@@ -492,13 +492,22 @@ const state = {
 
 function toggleSection(secId) {
   const sec = document.getElementById(secId);
-  const header = sec.querySelector('.section-header');
   const body = sec.querySelector('.section-body');
-  const chevron = sec.querySelector('.chevron');
   const isOpen = body.classList.contains('open');
-  body.classList.toggle('open', !isOpen);
-  header.classList.toggle('open', !isOpen);
-  chevron.classList.toggle('open', !isOpen);
+
+  // Close all sections first
+  document.querySelectorAll('.section').forEach(s => {
+    s.querySelector('.section-body').classList.remove('open');
+    s.querySelector('.section-header').classList.remove('open');
+    s.querySelector('.chevron').classList.remove('open');
+  });
+
+  // If it wasn't open, open it
+  if (!isOpen) {
+    body.classList.add('open');
+    sec.querySelector('.section-header').classList.add('open');
+    sec.querySelector('.chevron').classList.add('open');
+  }
 }
 
 function selectOption(el, name, value) {
