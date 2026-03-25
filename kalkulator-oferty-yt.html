@@ -191,8 +191,8 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
       </div>
       <div class="section-body" id="body-sec-1">
         <div class="option" onclick="selectOption(this,'growth','0')"><input type="radio" name="growth" value="0"><div class="option-content"><div class="option-label">Organicznie</div></div><div class="option-price">0 zł</div></div>
-        <div class="option" onclick="selectOption(this,'growth','budget')"><input type="radio" name="growth" value="budget"><div class="option-content"><div class="option-label">Płatnie – reklamy YouTube</div><div class="option-note">Podaj planowany budżet reklamowy</div></div><div class="option-price">budżet rekl.</div></div>
-        <div class="option" onclick="selectOption(this,'growth','tbd')"><input type="radio" name="growth" value="tbd"><div class="option-content"><div class="option-label">Do ustalenia</div></div><div class="option-price">—</div></div>
+        <div class="option" onclick="selectOption(this,'growth','budget')"><input type="radio" name="growth" value="budget"><div class="option-content"><div class="option-label">Płatnie – reklamy YouTube</div><div class="option-note">Podaj planowany budżet reklamowy</div></div><div class="option-price">do wyceny</div></div>
+        <div class="option" onclick="selectOption(this,'growth','tbd2')"><input type="radio" name="growth" value="tbd2"><div class="option-content"><div class="option-label">Do ustalenia, na podstawie strategii</div></div><div class="option-price">—</div></div>
         <div class="budget-row" id="budget-row" style="display:none">
           <label>Budżet reklamowy:</label><input type="number" id="ad-budget" value="0" min="0" step="500" oninput="recalc()"><span>zł / msc</span>
         </div>
@@ -201,18 +201,18 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
 
     <div class="section" data-c="blue" id="sec-2">
       <div class="section-header" onclick="toggleSection('sec-2')">
-        <div class="section-title"><div class="section-num">2</div><span class="section-label">Strategia</span></div>
+        <div class="section-title"><div class="section-num">2</div><span class="section-label">Stworzenie strategii</span></div>
         <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-strategy">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
       </div>
       <div class="section-body" id="body-sec-2">
-        <div class="option" onclick="selectOption(this,'strategy','0')"><input type="radio" name="strategy" value="0"><div class="option-content"><div class="option-label">Posiadam strategię – potrzebuję realizacji</div><div class="option-note">Agencja zweryfikuje strategię</div></div><div class="option-price">0 zł</div></div>
-        <div class="option" onclick="selectOption(this,'strategy','2000')"><input type="radio" name="strategy" value="2000"><div class="option-content"><div class="option-label">Nie posiadam strategii ani planu na kanał</div><div class="option-note">Opracowanie strategii przez agencję – jednorazowo</div></div><div class="option-price red">od 2 000 zł</div></div>
+        <div class="option" onclick="selectOption(this,'strategy','0')"><input type="radio" name="strategy" value="0"><div class="option-content"><div class="option-label">Posiadam strategię – potrzebuję realizacji</div><div class="option-note">Zweryfikujemy strategię</div></div><div class="option-price">0 zł</div></div>
+        <div class="option" onclick="selectOption(this,'strategy','300')"><input type="radio" name="strategy" value="300"><div class="option-content"><div class="option-label">Nie posiadam strategii ani planu na kanał</div><div class="option-note">Jednorazowo</div></div><div class="option-price red">od 300 zł</div></div>
       </div>
     </div>
 
     <div class="section" data-c="purple" id="sec-3">
       <div class="section-header" onclick="toggleSection('sec-3')">
-        <div class="section-title"><div class="section-num">3</div><span class="section-label">Kanał YouTube</span></div>
+        <div class="section-title"><div class="section-num">3</div><span class="section-label">Czy posiadasz kanał na YT?</span></div>
         <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-channel">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
       </div>
       <div class="section-body" id="body-sec-3">
@@ -228,7 +228,7 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
         <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-audit">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
       </div>
       <div class="section-body" id="body-sec-4">
-        <div class="option" onclick="selectOption(this,'audit','0')"><input type="radio" name="audit" value="0"><div class="option-content"><div class="option-label">Mój kanał jest dobrze ustawiony</div><div class="option-note">Agencja zweryfikuje kanał</div></div><div class="option-price">0 zł</div></div>
+        <div class="option" onclick="selectOption(this,'audit','0')"><input type="radio" name="audit" value="0"><div class="option-content"><div class="option-label">Mój kanał jest dobrze ustawiony</div><div class="option-note">Zweryfikujemy kanał</div></div><div class="option-price">0 zł</div></div>
         <div class="option" onclick="selectOption(this,'audit','300')"><input type="radio" name="audit" value="300"><div class="option-content"><div class="option-label">Nie mam pewności czy kanał jest dobrze zoptymalizowany</div></div><div class="option-price red">od 300 zł</div></div>
       </div>
     </div>
@@ -252,14 +252,32 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
         <div class="option" onclick="toggleCheck(this,'vt1')"><input type="checkbox" id="vt1"><div class="option-content"><div class="option-label">Wywiady</div></div></div>
         <div class="option" onclick="toggleCheck(this,'vt2')"><input type="checkbox" id="vt2"><div class="option-content"><div class="option-label">Treści merytoryczne mówione</div></div></div>
         <div class="option" onclick="toggleCheck(this,'vt3')"><input type="checkbox" id="vt3"><div class="option-content"><div class="option-label">Treści w plenerze</div></div></div>
+        <div class="option" onclick="toggleCheck(this,'vt5')"><input type="checkbox" id="vt5"><div class="option-content"><div class="option-label">Poradniki mówione i pokazywane</div></div></div>
+        <div class="option" onclick="toggleCheck(this,'vt6')"><input type="checkbox" id="vt6"><div class="option-content"><div class="option-label">Recenzje</div></div></div>
+        <div class="option" onclick="toggleCheck(this,'vt7')"><input type="checkbox" id="vt7"><div class="option-content"><div class="option-label">Wideo instrukcje</div></div></div>
+        <div class="option" onclick="toggleCheck(this,'vt8')"><input type="checkbox" id="vt8"><div class="option-content"><div class="option-label">Showreel'e</div></div></div>
+        <div class="option" onclick="toggleCheck(this,'vt9')"><input type="checkbox" id="vt9"><div class="option-content"><div class="option-label">Treści humorystyczne</div></div></div>
+        <div class="option" onclick="toggleCheck(this,'vt10')"><input type="checkbox" id="vt10"><div class="option-content"><div class="option-label">Szukam czegoś świeżego, aby się wyróżnić</div></div></div>
         <div class="option" onclick="toggleCheck(this,'vt4')"><input type="checkbox" id="vt4"><div class="option-content"><div class="option-label">Inne</div></div></div>
+        <div class="option" onclick="toggleCheck(this,'vt11')"><input type="checkbox" id="vt11"><div class="option-content"><div class="option-label">Do ustalenia</div></div></div>
         <div id="vt-other-wrap" style="display:none;margin-top:8px"><input type="text" placeholder="Opisz inny rodzaj wideo..."></div>
+      </div>
+    </div>
+
+    <div class="section" data-c="purple" id="sec-mod">
+      <div class="section-header" onclick="toggleSection('sec-mod')">
+        <div class="section-title"><div class="section-num">7</div><span class="section-label">Moderacja</span></div>
+        <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-moderation">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
+      </div>
+      <div class="section-body" id="body-sec-mod">
+        <div class="option" onclick="selectOption(this,'moderation','0')"><input type="radio" name="moderation" value="0"><div class="option-content"><div class="option-label">Nie potrzebuję</div><div class="option-note">Nie zalecamy – aktywna moderacja buduje społeczność</div></div><div class="option-price">0 zł</div></div>
+        <div class="option" onclick="selectOption(this,'moderation','600')"><input type="radio" name="moderation" value="600"><div class="option-content"><div class="option-label">Tak – do 10 minut dziennie</div></div><div class="option-price red">od 600 zł / msc</div></div>
       </div>
     </div>
 
     <div class="section" data-c="blue" id="sec-7">
       <div class="section-header" onclick="toggleSection('sec-7')">
-        <div class="section-title"><div class="section-num">7</div><span class="section-label">Ilość wideo w miesiącu</span></div>
+        <div class="section-title"><div class="section-num">8</div><span class="section-label">Ilość wideo w miesiącu</span></div>
         <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-qty">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
       </div>
       <div class="section-body" id="body-sec-7">
@@ -271,46 +289,48 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
 
     <div class="section" data-c="purple" id="sec-8">
       <div class="section-header" onclick="toggleSection('sec-8')">
-        <div class="section-title"><div class="section-num">8</div><span class="section-label">Research, koncepcje i scenariusze</span></div>
+        <div class="section-title"><div class="section-num">9</div><span class="section-label">Research, koncepcje i scenariusze</span></div>
         <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-research">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
       </div>
       <div class="section-body" id="body-sec-8">
-        <div class="option" onclick="selectOption(this,'research','0')"><input type="radio" name="research" value="0"><div class="option-content"><div class="option-label">Klient we własnym zakresie</div></div><div class="option-price">0 zł</div></div>
-        <div class="option" onclick="selectOption(this,'research','400')"><input type="radio" name="research" value="400"><div class="option-content"><div class="option-label">Agencja</div><div class="option-note" id="research-note"></div></div><div class="option-price red">od 400 zł / szt</div></div>
+        <div class="option" onclick="selectOption(this,'research','0')"><input type="radio" name="research" value="0"><div class="option-content"><div class="option-label">Sam zrobię research, rozpisze koncepcje i scenariusze</div></div><div class="option-price">0 zł</div></div>
+        <div class="option" onclick="selectOption(this,'research','400')"><input type="radio" name="research" value="400"><div class="option-content"><div class="option-label">Chcę Wam to zlecić</div><div class="option-note" id="research-note"></div></div><div class="option-price red">od 400 zł / szt</div></div>
+        <div class="option" onclick="selectOption(this,'research','tbd')"><input type="radio" name="research" value="tbd"><div class="option-content"><div class="option-label">Do ustalenia</div></div><div class="option-price">—</div></div>
       </div>
     </div>
 
     <div class="section" data-c="pink" id="sec-9">
       <div class="section-header" onclick="toggleSection('sec-9')">
-        <div class="section-title"><div class="section-num">9</div><span class="section-label">Kto występuje w wideo</span></div>
+        <div class="section-title"><div class="section-num">10</div><span class="section-label">Kto występuje w wideo</span></div>
         <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-talent">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
       </div>
       <div class="section-body" id="body-sec-9">
         <div class="option" onclick="selectOption(this,'talent','0')"><input type="radio" name="talent" value="0"><div class="option-content"><div class="option-label">Ja</div></div><div class="option-price">0 zł</div></div>
         <div class="option" onclick="selectOption(this,'talent','0')"><input type="radio" name="talent" value="0"><div class="option-content"><div class="option-label">Mój pracownik</div></div><div class="option-price">0 zł</div></div>
         <div class="option" onclick="selectOption(this,'talent','0')"><input type="radio" name="talent" value="0"><div class="option-content"><div class="option-label">Mój aktor / aktorka</div></div><div class="option-price">0 zł</div></div>
-        <div class="option" onclick="selectOption(this,'talent','1500')"><input type="radio" name="talent" value="1500"><div class="option-content"><div class="option-label">Potrzebuję aktora / aktorki</div></div><div class="option-price red">od 1 500 zł / os.</div></div>
-        <div class="option" onclick="selectOption(this,'talent','0')"><input type="radio" name="talent" value="0"><div class="option-content"><div class="option-label">Wideo nie potrzebują osoby</div></div><div class="option-price">0 zł</div></div>
+        <div class="option" onclick="selectOption(this,'talent','1000')"><input type="radio" name="talent" value="1000"><div class="option-content"><div class="option-label">Potrzebuję aktora / aktorki</div></div><div class="option-price red">od 1 000 zł / os.</div></div>
+        <div class="option" onclick="selectOption(this,'talent','0')"><input type="radio" name="talent" value="0"><div class="option-content"><div class="option-label">Filmy nie potrzebują osoby</div></div><div class="option-price">0 zł</div></div>
         <div class="option" onclick="selectOption(this,'talent','tbd')"><input type="radio" name="talent" value="tbd"><div class="option-content"><div class="option-label">Do ustalenia</div></div><div class="option-price">—</div></div>
       </div>
     </div>
 
     <div class="section" data-c="yellow" id="sec-10">
       <div class="section-header" onclick="toggleSection('sec-10')">
-        <div class="section-title"><div class="section-num">10</div><span class="section-label">Kto realizuje nagrania</span></div>
+        <div class="section-title"><div class="section-num">11</div><span class="section-label">Kto realizuje nagrania</span></div>
         <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-filming">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
       </div>
       <div class="section-body" id="body-sec-10">
-        <div class="option" onclick="selectOption(this,'filming','0')"><input type="radio" name="filming" value="0"><div class="option-content"><div class="option-label">Klient we własnym zakresie</div></div><div class="option-price">0 zł</div></div>
-        <div class="option" onclick="selectOption(this,'filming','400')"><input type="radio" name="filming" value="400"><div class="option-content"><div class="option-label">Zewnętrzna firma</div><div class="option-note">Kwota za obsługę i współpracę</div></div><div class="option-price red">od 400 zł</div></div>
-        <div class="option" onclick="selectOption(this,'filming','2000')"><input type="radio" name="filming" value="2000"><div class="option-content"><div class="option-label">Agencja</div><div class="option-note">Koszt za dzień zdjęciowy</div></div><div class="option-price red">od 2 000 zł / dzień</div></div>
-        <div class="option" onclick="selectOption(this,'filming','tbd')"><input type="radio" name="filming" value="tbd"><div class="option-content"><div class="option-label">Inne opcje</div></div><div class="option-price">—</div></div>
+        <div class="option" onclick="selectOption(this,'filming','0')"><input type="radio" name="filming" value="0"><div class="option-content"><div class="option-label">Sam zrealizuję nagrania</div></div><div class="option-price">0 zł</div></div>
+        <div class="option" onclick="selectOption(this,'filming','400')"><input type="radio" name="filming" value="400"><div class="option-content"><div class="option-label">Zewnętrzna firma nagra wideo</div><div class="option-note">Kwota za obsługę i współpracę</div></div><div class="option-price red">od 400 zł</div></div>
+        <div class="option" onclick="selectOption(this,'filming','1500')"><input type="radio" name="filming" value="1500"><div class="option-content"><div class="option-label">Chcę abyście Wy nagrali wideo</div></div><div class="option-price red">od 1 500 zł / dzień zdj.</div></div>
+        <div class="option" onclick="selectOption(this,'filming','500')"><input type="radio" name="filming" value="500"><div class="option-content"><div class="option-label">Potrzebuję tylko wskazówek, ale będę sam nagrywał</div></div><div class="option-price red">od 500 zł</div></div>
+        <div class="option" onclick="selectOption(this,'filming','tbd')"><input type="radio" name="filming" value="tbd"><div class="option-content"><div class="option-label">Do ustalenia</div></div><div class="option-price">—</div></div>
       </div>
     </div>
 
     <div class="section" data-c="orange" id="sec-11">
       <div class="section-header" onclick="toggleSection('sec-11')">
-        <div class="section-title"><div class="section-num">11</div><span class="section-label">Miejsce nagrań</span></div>
+        <div class="section-title"><div class="section-num">12</div><span class="section-label">Miejsce nagrań</span></div>
         <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-location">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
       </div>
       <div class="section-body" id="body-sec-11">
@@ -323,19 +343,19 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
 
     <div class="section" data-c="blue" id="sec-12">
       <div class="section-header" onclick="toggleSection('sec-12')">
-        <div class="section-title"><div class="section-num">12</div><span class="section-label">Montaż wideo</span></div>
+        <div class="section-title"><div class="section-num">13</div><span class="section-label">Montaż wideo</span></div>
         <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-editing">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
       </div>
       <div class="section-body" id="body-sec-12">
-        <div class="option" onclick="selectOption(this,'editing','0')"><input type="radio" name="editing" value="0"><div class="option-content"><div class="option-label">Klient we własnym zakresie</div></div><div class="option-price">0 zł</div></div>
-        <div class="option" onclick="selectOption(this,'editing','800')"><input type="radio" name="editing" value="800"><div class="option-content"><div class="option-label">Agencja</div><div class="option-note" id="editing-note"></div></div><div class="option-price red">od 800 zł / szt (800–3 000)</div></div>
-        <div class="option" onclick="selectOption(this,'editing','300')"><input type="radio" name="editing" value="300"><div class="option-content"><div class="option-label">Podwykonawca zewnętrzny</div><div class="option-note">Kwota za obsługę i współpracę<span id="editing-note2"></span></div></div><div class="option-price red">od 300 zł</div></div>
+        <div class="option" onclick="selectOption(this,'editing','0')"><input type="radio" name="editing" value="0"><div class="option-content"><div class="option-label">Sam zrealizuję montaż wideo</div></div><div class="option-price">0 zł</div></div>
+        <div class="option" onclick="selectOption(this,'editing','300')"><input type="radio" name="editing" value="300"><div class="option-content"><div class="option-label">Zewnętrzna firma zmontuje wideo</div><div class="option-note">Kwota za obsługę i współpracę<span id="editing-note2"></span></div></div><div class="option-price red">od 300 zł</div></div>
+        <div class="option" onclick="selectOption(this,'editing','600')"><input type="radio" name="editing" value="600"><div class="option-content"><div class="option-label">Chcę abyście Wy zmontowali wideo</div><div class="option-note">W zależności od stopnia skomplikowania<span id="editing-note"></span></div></div><div class="option-price red">od 600 zł do 3 000 zł</div></div>
       </div>
     </div>
 
     <div class="section" data-c="purple" id="sec-13">
       <div class="section-header" onclick="toggleSection('sec-13')">
-        <div class="section-title"><div class="section-num">13</div><span class="section-label">Recykling treści na inne platformy</span></div>
+        <div class="section-title"><div class="section-num">14</div><span class="section-label">Recykling treści na inne platformy</span></div>
         <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-recycle">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
       </div>
       <div class="section-body" id="body-sec-13">
@@ -347,29 +367,29 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
 
     <div class="section" data-c="pink" id="sec-14">
       <div class="section-header" onclick="toggleSection('sec-14')">
-        <div class="section-title"><div class="section-num">14</div><span class="section-label">Publikacja wideo</span></div>
+        <div class="section-title"><div class="section-num">15</div><span class="section-label">Publikacja wideo</span></div>
         <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-publish">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
       </div>
       <div class="section-body" id="body-sec-14">
-        <div class="option" onclick="selectOption(this,'publish','0')"><input type="radio" name="publish" value="0"><div class="option-content"><div class="option-label">Po stronie klienta</div></div><div class="option-price">0 zł</div></div>
-        <div class="option" onclick="selectOption(this,'publish','200')"><input type="radio" name="publish" value="200"><div class="option-content"><div class="option-label">Agencja</div><div class="option-note" id="publish-note"></div></div><div class="option-price red">od 200 zł / szt</div></div>
+        <div class="option" onclick="selectOption(this,'publish','0')"><input type="radio" name="publish" value="0"><div class="option-content"><div class="option-label">Sam będę publikował wideo</div></div><div class="option-price">0 zł</div></div>
+        <div class="option" onclick="selectOption(this,'publish','200')"><input type="radio" name="publish" value="200"><div class="option-content"><div class="option-label">Chcę abyście Wy przygotowali tytuł, opis, ustawili odcinek i go opublikowali</div><div class="option-note" id="publish-note"></div></div><div class="option-price red">od 200 zł / szt</div></div>
       </div>
     </div>
 
     <div class="section" data-c="yellow" id="sec-15">
       <div class="section-header" onclick="toggleSection('sec-15')">
-        <div class="section-title"><div class="section-num">15</div><span class="section-label">Miniaturki</span></div>
+        <div class="section-title"><div class="section-num">16</div><span class="section-label">Miniaturki</span></div>
         <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-thumb">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
       </div>
       <div class="section-body" id="body-sec-15">
-        <div class="option" onclick="selectOption(this,'thumb','0')"><input type="radio" name="thumb" value="0"><div class="option-content"><div class="option-label">Po stronie klienta</div></div><div class="option-price">0 zł</div></div>
-        <div class="option" onclick="selectOption(this,'thumb','250')"><input type="radio" name="thumb" value="250"><div class="option-content"><div class="option-label">Agencja</div><div class="option-note" id="thumb-note"></div></div><div class="option-price red">od 250 zł / szt</div></div>
+        <div class="option" onclick="selectOption(this,'thumb','0')"><input type="radio" name="thumb" value="0"><div class="option-content"><div class="option-label">Sam przygotuje miniaturkę</div></div><div class="option-price">0 zł</div></div>
+        <div class="option" onclick="selectOption(this,'thumb','250')"><input type="radio" name="thumb" value="250"><div class="option-content"><div class="option-label">Chcę abyście Wy przygotowali miniaturkę</div><div class="option-note" id="thumb-note"></div></div><div class="option-price red">od 250 zł / szt</div></div>
       </div>
     </div>
 
     <div class="section" data-c="orange" id="sec-16t">
       <div class="section-header" onclick="toggleSection('sec-16t')">
-        <div class="section-title"><div class="section-num">16</div><span class="section-label">Testy tytułów i miniaturek</span></div>
+        <div class="section-title"><div class="section-num">17</div><span class="section-label">Testy tytułów i miniaturek</span></div>
         <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-tests">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
       </div>
       <div class="section-body" id="body-sec-16t">
@@ -382,22 +402,11 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
 
     <div class="section" data-c="blue" id="sec-16">
       <div class="section-header" onclick="toggleSection('sec-16')">
-        <div class="section-title"><div class="section-num">17</div><span class="section-label">Benchmarki i przykłady wideo</span></div>
+        <div class="section-title"><div class="section-num">18</div><span class="section-label">Benchmarki i przykłady wideo</span></div>
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
       </div>
       <div class="section-body" id="body-sec-16">
         <div class="field-group"><div class="field-label">Linki lub nazwy kanałów referencyjnych</div><textarea rows="3" placeholder="Np. https://youtube.com/@... lub nazwa kanału"></textarea></div>
-      </div>
-    </div>
-
-    <div class="section" data-c="purple" id="sec-17">
-      <div class="section-header" onclick="toggleSection('sec-17')">
-        <div class="section-title"><div class="section-num">18</div><span class="section-label">Moderacja komentarzy</span></div>
-        <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-moderation">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
-      </div>
-      <div class="section-body" id="body-sec-17">
-        <div class="option" onclick="selectOption(this,'moderation','0')"><input type="radio" name="moderation" value="0"><div class="option-content"><div class="option-label">Nie potrzebuję</div><div class="option-note">Nie zalecamy – aktywna moderacja buduje społeczność</div></div><div class="option-price">0 zł</div></div>
-        <div class="option" onclick="selectOption(this,'moderation','600')"><input type="radio" name="moderation" value="600"><div class="option-content"><div class="option-label">Tak – do 10 minut dziennie</div></div><div class="option-price red">od 600 zł / msc</div></div>
       </div>
     </div>
 
@@ -431,7 +440,7 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
         <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-community">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
       </div>
       <div class="section-body" id="body-sec-20">
-        <div class="option" onclick="selectOption(this,'community','0')"><input type="radio" name="community" value="0"><div class="option-content"><div class="option-label">Nie</div></div><div class="option-price">0 zł</div></div>
+        <div class="option" onclick="selectOption(this,'community','0')"><input type="radio" name="community" value="0"><div class="option-content"><div class="option-label">Nie chcę rozwijać karty społeczności</div></div><div class="option-price">0 zł</div></div>
         <div class="option" onclick="selectOption(this,'community','700')"><input type="radio" name="community" value="700"><div class="option-content"><div class="option-label">Tak – 2 posty miesięcznie</div></div><div class="option-price red">od 700 zł / msc</div></div>
         <div class="option" onclick="selectOption(this,'community','tbd')"><input type="radio" name="community" value="tbd"><div class="option-content"><div class="option-label">Do ustalenia</div></div><div class="option-price">—</div></div>
       </div>
@@ -556,14 +565,13 @@ function recalc() {
   if (state.growth === 'budget' && state.adBudget > 0) {
     total += state.adBudget; items.push({ label: 'Budżet reklamowy', val: state.adBudget });
     updatePreview('prev-growth', fmt(state.adBudget));
-  } else if (state.growth === 'tbd') {
+  } else if (state.growth === 'tbd' || state.growth === 'tbd2') {
     hasTbd = true; items.push({ label: 'Rozwój kanału', val: 'tbd' });
     updatePreview('prev-growth', 'do ustalenia');
   } else if (state.growth !== null) { updatePreview('prev-growth', '0 zł'); }
 
   add('Strategia (jednorazowo)', state.strategy, false);
   if (state.strategy !== null) updatePreview('prev-strategy', state.strategy === 'tbd' ? 'do ustalenia' : (parseInt(state.strategy) ? fmt(parseInt(state.strategy)) : '0 zł'));
-
   add('Konfiguracja kanału', state.channel, false);
   if (state.channel !== null) updatePreview('prev-channel', parseInt(state.channel) ? fmt(parseInt(state.channel)) : '0 zł');
 
@@ -584,16 +592,15 @@ function recalc() {
 
   add('Realizacja nagrań', state.filming, false);
   if (state.filming !== null) updatePreview('prev-filming', state.filming === 'tbd' ? 'do ustalenia' : (parseInt(state.filming) ? fmt(parseInt(state.filming)) : '0 zł'));
-
   add('Miejsce nagrań', state.location, false);
   if (state.location !== null) updatePreview('prev-location', state.location === 'tbd' ? 'do ustalenia' : (parseInt(state.location) ? fmt(parseInt(state.location)) : '0 zł'));
 
   const editNote = document.getElementById('editing-note');
   const editNote2 = document.getElementById('editing-note2');
-  if (state.editing === '800') {
-    if (editNote) editNote.textContent = qty + ' wideo × 800 zł = ' + fmt(qty * 800);
+  if (state.editing === '600') {
+    if (editNote) editNote.textContent = ' – ' + qty + ' wideo × 600 zł = ' + fmt(qty * 600);
     add('Montaż agencja (' + qty + '×)', state.editing, true);
-    updatePreview('prev-editing', fmt(800 * qty));
+    updatePreview('prev-editing', fmt(600 * qty));
   } else if (state.editing === '300') {
     if (editNote2) editNote2.textContent = ' – ' + qty + ' wideo × 300 zł = ' + fmt(qty * 300);
     add('Montaż zewnętrzny (' + qty + '×)', state.editing, true);
