@@ -191,7 +191,7 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
       </div>
       <div class="section-body" id="body-sec-1">
         <div class="option" onclick="selectOption(this,'growth','0')"><input type="radio" name="growth" value="0"><div class="option-content"><div class="option-label">Organicznie</div></div><div class="option-price">0 zł</div></div>
-        <div class="option" onclick="selectOption(this,'growth','budget')"><input type="radio" name="growth" value="budget"><div class="option-content"><div class="option-label">Płatnie – reklamy YouTube</div><div class="option-note">Podaj planowany budżet reklamowy</div></div><div class="option-price">do wyceny</div></div>
+        <div class="option" onclick="selectOption(this,'growth','budget')"><input type="radio" name="growth" value="budget"><div class="option-content"><div class="option-label">Płatnie – reklamy YouTube</div><div class="option-note">Podaj planowany budżet reklamowy</div></div><div class="option-price">do wyceny, obsługa reklam</div></div>
         <div class="option" onclick="selectOption(this,'growth','tbd2')"><input type="radio" name="growth" value="tbd2"><div class="option-content"><div class="option-label">Do ustalenia, na podstawie strategii</div></div><div class="option-price">—</div></div>
         <div class="budget-row" id="budget-row" style="display:none">
           <label>Budżet reklamowy:</label><input type="number" id="ad-budget" value="0" min="0" step="500" oninput="recalc()"><span>zł / msc</span>
@@ -206,7 +206,7 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
       </div>
       <div class="section-body" id="body-sec-2">
         <div class="option" onclick="selectOption(this,'strategy','0')"><input type="radio" name="strategy" value="0"><div class="option-content"><div class="option-label">Posiadam strategię – potrzebuję realizacji</div><div class="option-note">Zweryfikujemy strategię</div></div><div class="option-price">0 zł</div></div>
-        <div class="option" onclick="selectOption(this,'strategy','300')"><input type="radio" name="strategy" value="300"><div class="option-content"><div class="option-label">Nie posiadam strategii ani planu na kanał</div><div class="option-note">Jednorazowo</div></div><div class="option-price red">od 300 zł</div></div>
+        <div class="option" onclick="selectOption(this,'strategy','3000')"><input type="radio" name="strategy" value="3000"><div class="option-content"><div class="option-label">Nie posiadam strategii ani planu na kanał</div><div class="option-note">Jednorazowo</div></div><div class="option-price red">od 3 000 zł</div></div>
       </div>
     </div>
 
@@ -243,9 +243,19 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
       </div>
     </div>
 
+    <div class="section" data-c="blue" id="sec-16">
+      <div class="section-header" onclick="toggleSection('sec-16')">
+        <div class="section-title"><div class="section-num">6</div><span class="section-label">Benchmarki i przykłady wideo</span></div>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+      </div>
+      <div class="section-body" id="body-sec-16">
+        <div class="field-group"><div class="field-label">Linki lub nazwy kanałów referencyjnych</div><textarea rows="3" placeholder="Np. https://youtube.com/@... lub nazwa kanału"></textarea></div>
+      </div>
+    </div>
+
     <div class="section" data-c="orange" id="sec-6">
       <div class="section-header" onclick="toggleSection('sec-6')">
-        <div class="section-title"><div class="section-num">6</div><span class="section-label">Rodzaj wideo</span></div>
+        <div class="section-title"><div class="section-num">7</div><span class="section-label">Rodzaj wideo</span></div>
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
       </div>
       <div class="section-body" id="body-sec-6">
@@ -261,17 +271,6 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
         <div class="option" onclick="toggleCheck(this,'vt4')"><input type="checkbox" id="vt4"><div class="option-content"><div class="option-label">Inne</div></div></div>
         <div class="option" onclick="toggleCheck(this,'vt11')"><input type="checkbox" id="vt11"><div class="option-content"><div class="option-label">Do ustalenia</div></div></div>
         <div id="vt-other-wrap" style="display:none;margin-top:8px"><input type="text" placeholder="Opisz inny rodzaj wideo..."></div>
-      </div>
-    </div>
-
-    <div class="section" data-c="purple" id="sec-mod">
-      <div class="section-header" onclick="toggleSection('sec-mod')">
-        <div class="section-title"><div class="section-num">7</div><span class="section-label">Moderacja</span></div>
-        <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-moderation">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
-      </div>
-      <div class="section-body" id="body-sec-mod">
-        <div class="option" onclick="selectOption(this,'moderation','0')"><input type="radio" name="moderation" value="0"><div class="option-content"><div class="option-label">Nie potrzebuję</div><div class="option-note">Nie zalecamy – aktywna moderacja buduje społeczność</div></div><div class="option-price">0 zł</div></div>
-        <div class="option" onclick="selectOption(this,'moderation','600')"><input type="radio" name="moderation" value="600"><div class="option-content"><div class="option-label">Tak – do 10 minut dziennie</div></div><div class="option-price red">od 600 zł / msc</div></div>
       </div>
     </div>
 
@@ -293,7 +292,7 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
         <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-research">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
       </div>
       <div class="section-body" id="body-sec-8">
-        <div class="option" onclick="selectOption(this,'research','0')"><input type="radio" name="research" value="0"><div class="option-content"><div class="option-label">Sam zrobię research, rozpisze koncepcje i scenariusze</div></div><div class="option-price">0 zł</div></div>
+        <div class="option" onclick="selectOption(this,'research','0')"><input type="radio" name="research" value="0"><div class="option-content"><div class="option-label">Sam zrobię research, rozpiszę koncepcje i scenariusze</div></div><div class="option-price">0 zł</div></div>
         <div class="option" onclick="selectOption(this,'research','400')"><input type="radio" name="research" value="400"><div class="option-content"><div class="option-label">Chcę Wam to zlecić</div><div class="option-note" id="research-note"></div></div><div class="option-price red">od 400 zł / szt</div></div>
         <div class="option" onclick="selectOption(this,'research','tbd')"><input type="radio" name="research" value="tbd"><div class="option-content"><div class="option-label">Do ustalenia</div></div><div class="option-price">—</div></div>
       </div>
@@ -322,7 +321,7 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
       <div class="section-body" id="body-sec-10">
         <div class="option" onclick="selectOption(this,'filming','0')"><input type="radio" name="filming" value="0"><div class="option-content"><div class="option-label">Sam zrealizuję nagrania</div></div><div class="option-price">0 zł</div></div>
         <div class="option" onclick="selectOption(this,'filming','400')"><input type="radio" name="filming" value="400"><div class="option-content"><div class="option-label">Zewnętrzna firma nagra wideo</div><div class="option-note">Kwota za obsługę i współpracę</div></div><div class="option-price red">od 400 zł</div></div>
-        <div class="option" onclick="selectOption(this,'filming','1500')"><input type="radio" name="filming" value="1500"><div class="option-content"><div class="option-label">Chcę abyście Wy nagrali wideo</div></div><div class="option-price red">od 1 500 zł / dzień zdj.</div></div>
+        <div class="option" onclick="selectOption(this,'filming','1500')"><input type="radio" name="filming" value="1500"><div class="option-content"><div class="option-label">Chcę abyście Wy nagrali wideo</div></div><div class="option-price red">od 1 500 zł / dzień nagraniowy</div></div>
         <div class="option" onclick="selectOption(this,'filming','500')"><input type="radio" name="filming" value="500"><div class="option-content"><div class="option-label">Potrzebuję tylko wskazówek, ale będę sam nagrywał</div></div><div class="option-price red">od 500 zł</div></div>
         <div class="option" onclick="selectOption(this,'filming','tbd')"><input type="radio" name="filming" value="tbd"><div class="option-content"><div class="option-label">Do ustalenia</div></div><div class="option-price">—</div></div>
       </div>
@@ -335,7 +334,7 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
       </div>
       <div class="section-body" id="body-sec-11">
         <div class="option" onclick="selectOption(this,'location','500')"><input type="radio" name="location" value="500"><div class="option-content"><div class="option-label">Wynajęte studio</div><div class="option-note">+ koszty logistyczne</div></div><div class="option-price red">od 500 zł</div></div>
-        <div class="option" onclick="selectOption(this,'location','0')"><input type="radio" name="location" value="0"><div class="option-content"><div class="option-label">Siedziba firmy</div></div><div class="option-price">0 zł</div></div>
+        <div class="option" onclick="selectOption(this,'location','0')"><input type="radio" name="location" value="0"><div class="option-content"><div class="option-label">Moja siedziba firmy</div></div><div class="option-price">0 zł</div></div>
         <div class="option" onclick="selectOption(this,'location','800')"><input type="radio" name="location" value="800"><div class="option-content"><div class="option-label">Inna wskazana lokalizacja</div><div class="option-note">+ koszty logistyczne</div></div><div class="option-price red">od 800 zł</div></div>
         <div class="option" onclick="selectOption(this,'location','tbd')"><input type="radio" name="location" value="tbd"><div class="option-content"><div class="option-label">Do ustalenia</div></div><div class="option-price">—</div></div>
       </div>
@@ -400,19 +399,11 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
       </div>
     </div>
 
-    <div class="section" data-c="blue" id="sec-16">
-      <div class="section-header" onclick="toggleSection('sec-16')">
-        <div class="section-title"><div class="section-num">18</div><span class="section-label">Benchmarki i przykłady wideo</span></div>
-        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
-      </div>
-      <div class="section-body" id="body-sec-16">
-        <div class="field-group"><div class="field-label">Linki lub nazwy kanałów referencyjnych</div><textarea rows="3" placeholder="Np. https://youtube.com/@... lub nazwa kanału"></textarea></div>
-      </div>
-    </div>
+
 
     <div class="section" data-c="pink" id="sec-18">
       <div class="section-header" onclick="toggleSection('sec-18')">
-        <div class="section-title"><div class="section-num">19</div><span class="section-label">Wsparcie kreatywne</span></div>
+        <div class="section-title"><div class="section-num">18</div><span class="section-label">Wsparcie kreatywne</span></div>
         <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-creative">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
       </div>
       <div class="section-body" id="body-sec-18">
@@ -424,7 +415,7 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
 
     <div class="section" data-c="yellow" id="sec-19">
       <div class="section-header" onclick="toggleSection('sec-19')">
-        <div class="section-title"><div class="section-num">20</div><span class="section-label">Wsparcie strategiczne</span></div>
+        <div class="section-title"><div class="section-num">19</div><span class="section-label">Wsparcie strategiczne</span></div>
         <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-strategic">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
       </div>
       <div class="section-body" id="body-sec-19">
@@ -436,13 +427,34 @@ textarea:focus, input:focus { border-color: var(--orange); background: rgba(255,
 
     <div class="section" data-c="orange" id="sec-20">
       <div class="section-header" onclick="toggleSection('sec-20')">
-        <div class="section-title"><div class="section-num">21</div><span class="section-label">Karta społeczności YouTube</span></div>
+        <div class="section-title"><div class="section-num">20</div><span class="section-label">Karta społeczności YouTube</span></div>
         <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-community">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
       </div>
       <div class="section-body" id="body-sec-20">
         <div class="option" onclick="selectOption(this,'community','0')"><input type="radio" name="community" value="0"><div class="option-content"><div class="option-label">Nie chcę rozwijać karty społeczności</div></div><div class="option-price">0 zł</div></div>
         <div class="option" onclick="selectOption(this,'community','700')"><input type="radio" name="community" value="700"><div class="option-content"><div class="option-label">Tak – 2 posty miesięcznie</div></div><div class="option-price red">od 700 zł / msc</div></div>
         <div class="option" onclick="selectOption(this,'community','tbd')"><input type="radio" name="community" value="tbd"><div class="option-content"><div class="option-label">Do ustalenia</div></div><div class="option-price">—</div></div>
+      </div>
+    </div>
+
+    <div class="section" data-c="purple" id="sec-mod">
+      <div class="section-header" onclick="toggleSection('sec-mod')">
+        <div class="section-title"><div class="section-num">21</div><span class="section-label">Moderacja</span></div>
+        <div style="display:flex;align-items:center;gap:12px"><span class="section-price-preview" id="prev-moderation">—</span><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
+      </div>
+      <div class="section-body" id="body-sec-mod">
+        <div class="option" onclick="selectOption(this,'moderation','0')"><input type="radio" name="moderation" value="0"><div class="option-content"><div class="option-label">Nie potrzebuję</div><div class="option-note">Nie zalecamy – aktywna moderacja buduje społeczność</div></div><div class="option-price">0 zł</div></div>
+        <div class="option" onclick="selectOption(this,'moderation','600')"><input type="radio" name="moderation" value="600"><div class="option-content"><div class="option-label">Tak – do 10 minut dziennie</div></div><div class="option-price red">od 600 zł / msc</div></div>
+      </div>
+    </div>
+
+    <div class="section" data-c="yellow" id="sec-extra">
+      <div class="section-header" onclick="toggleSection('sec-extra')">
+        <div class="section-title"><div class="section-num">22</div><span class="section-label">Inne, dodatkowe informacje</span></div>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+      </div>
+      <div class="section-body" id="body-sec-extra">
+        <div class="field-group"><div class="field-label">Cokolwiek chcesz nam przekazać</div><textarea rows="4" placeholder="Dodatkowe uwagi, pytania, specyficzne wymagania..."></textarea></div>
       </div>
     </div>
 
